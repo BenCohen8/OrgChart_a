@@ -1,63 +1,43 @@
-
-#include "OrgChart.hpp"
 #include <iostream>
+#include "OrgChart.hpp"
+
 using namespace std;
 using namespace ariel;
 
-    OrgChart::OrgChart(string N)
-    {
-      //  this->setName(N);
-    }
-   
-      OrgChart OrgChart::add_root(string s)
-      {
-        employee *e=new employee(s);
-       // cout<<1<<endl;
-       // this->setroot(e);
-       // *this=o;
+OrgChart OrgChart::add_root(string s)
+{
+   // this->root->name=s;
+    return *this;
+}
+OrgChart OrgChart::add_sub(string,string)
+{
+    return *this;
+}
 
-        return *this;
-      }
-        OrgChart OrgChart::add_sub(string s1,string s2)
-        {
-        return (*this);
-        }
-    employee *OrgChart::begin_level_order()
+    OrgChart::employee  * OrgChart::begin_level_order()
     {
-      return this->getRoot();
+        
+      return this->root;
     }
 
-        employee* OrgChart::end_level_order()
+        OrgChart::employee* OrgChart::end_level_order()
         {
           
-          return this->getRoot();
+          return this->root;
         }
-          employee* OrgChart::begin_reverse_order()
+           OrgChart::employee* OrgChart::begin_reverse_order()
           {
-            return this->getRoot();
+          return this->root;
           }
-        employee* OrgChart::reverse_order()
+         OrgChart::employee* OrgChart::reverse_order()
         {
-            return this->getRoot();
+          return this->root;
         }
-       employee* OrgChart::begin_preorder()
+        OrgChart::employee* OrgChart::begin_preorder()
       {
-        return this->getRoot();
+          return this->root;
       }
-      employee* OrgChart::end_preorder()
+       OrgChart::employee* OrgChart::end_preorder()
       {
-          return this->getRoot();
+          return this->root;
       }
- 
-
-       /* 
-        OrgChart OrgChart::begin()
-        {
-            return *this->getRoot();
-        }
-        OrgChart OrgChart::end()
-        {
-            return *this->getRoot();
-
-        }
-        */

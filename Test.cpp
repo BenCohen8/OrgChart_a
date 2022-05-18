@@ -8,10 +8,11 @@ TEST_CASE("test1")
 {
     OrgChart org{};
     org.add_root(("abcd"));
-    CHECK(org.isEmpty()==false);
+  //  CHECK(org.root.name=="abcd");
     CHECK_THROWS(org.add_sub("efgbb","abcd"));//it's should be ("abcd","efgbb")
     CHECK_NOTHROW(org.add_sub("abcd","efgh"));
     CHECK_NOTHROW(org.add_sub("abcd","ijkl"));
+    CHECK_NOTHROW(org.add_sub("abcd","ijgkl"));
     auto it=org.begin_level_order();
     //string x=it->Name;
     //CHECK(x=="cd");
@@ -25,7 +26,6 @@ TEST_CASE("test2")
 {
     OrgChart org{};
     org.add_root(("abcd"));
-    CHECK(org.isEmpty()==false);
     CHECK_THROWS(org.add_sub("efgbb","abcd"));//it's should be ("abcd","efgbb")
     CHECK_NOTHROW(org.add_sub("abcd","efgh"));
     CHECK_NOTHROW(org.add_sub("abcd","ijkl"));
@@ -42,7 +42,6 @@ TEST_CASE("test3")
 {
     OrgChart org{};
     org.add_root(("efgh"));
-    CHECK(org.isEmpty()==false);
     CHECK_THROWS(org.add_sub("efgbb","abcd"));//it's should be ("abcd","efgbb")
     CHECK_NOTHROW(org.add_sub("abcd","efgh"));
     CHECK_NOTHROW(org.add_sub("abcd","ijkl"));
@@ -50,7 +49,7 @@ TEST_CASE("test3")
     CHECK_NOTHROW(org.add_sub("ijkl","xyz"));
     CHECK_NOTHROW(org.add_sub("abcdefgh","abcf"));
     auto it=org.begin_level_order();
-
     CHECK(++it!=org.end_level_order());
+    auto it1 =org.begin_reverse_order();
 
 };
