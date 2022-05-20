@@ -13,6 +13,7 @@ public:
         employee(string s)
 			: name(s) {
 		}
+	int size(){return 4;}
     };
     employee* Boss=nullptr;
     OrgChart() : root(nullptr) {
